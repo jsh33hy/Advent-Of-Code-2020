@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
-## Pass in arguments
+## Build + Run the AoC Problem Solver. Passes day# problem# arguments to the main function
 
-################################################################################
-##  Print usage
-################################################################################
 function usage {
   echo -e ""
   echo -e "Usage: $(basename $0) [day#] [problem#]"
