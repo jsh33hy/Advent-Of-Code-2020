@@ -23,7 +23,7 @@ class ReportRepair1 : AocProblem {
             }
             hashSet.add(curVal)
         }
-        logger.log("Do results found")
+        logger.log("No results found")
         return -1
     }
 }

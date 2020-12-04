@@ -27,7 +27,7 @@ class ReportRepair2 : AocProblem {
                 hashSet.add(inputArr[j])
             }
         }
-        logger.log("Do results found")
+        logger.log("No results found")
         return -1
     }
 }
