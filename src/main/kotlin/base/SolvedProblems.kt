@@ -4,6 +4,8 @@ import day1.ReportRepair1
 import day1.ReportRepair2
 import day2.PasswordPhilosophy1
 import day2.PasswordPhilosophy2
+import day3.TobogganTrajectory1
+import day3.TobogganTrajectory2
 
 class SolvedProblems {
     companion object {
@@ -22,6 +24,7 @@ class SolvedProblems {
             //  add day 2 problems
             solvedProblems[2] = listOf(PasswordPhilosophy1(), PasswordPhilosophy2())
             //  add day 3 problems
+            solvedProblems[3] = listOf(TobogganTrajectory1(), TobogganTrajectory2())
         }
 
         fun getProblem(day: Int, problemNumber: Int): AocProblem {
