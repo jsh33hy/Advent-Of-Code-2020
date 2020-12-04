@@ -2,6 +2,8 @@ package base
 
 import day1.ReportRepair1
 import day1.ReportRepair2
+import day2.PasswordPhilosophy1
+import day2.PasswordPhilosophy2
 
 class SolvedProblems {
     companion object {
@@ -11,13 +13,14 @@ class SolvedProblems {
             }
         }
 
+        //  could be a spare array
         private val solvedProblems = mutableMapOf<Int, List<AocProblem>>()
 
         init {
             //  add day 1 problems
             solvedProblems[1] = listOf(ReportRepair1(), ReportRepair2())
             //  add day 2 problems
-
+            solvedProblems[2] = listOf(PasswordPhilosophy1(), PasswordPhilosophy2())
             //  add day 3 problems
         }
 
