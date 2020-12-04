@@ -16,5 +16,5 @@ cd <project_name>
 ```
 Example:
 ```
-./solve.sh 2 1 ## solves day2 problem
+./solve.sh 2 1 ## solves day2 problem1
 ```
