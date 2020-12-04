@@ -1,6 +1,6 @@
 # Advent of Code 2020
 
-Using this challenge as an opportunity to improve my idiomatic Kotlin skills for the sanity of the yum.dev Android team.
+Using this challenge as an opportunity to improve my idiomatic Kotlin skills for the sanity of the [yum.dev](https://yum.dev) Android team.
 
 #### Instructions
 Everything runs from the command line. To see the solution for a problem:
