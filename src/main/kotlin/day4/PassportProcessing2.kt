@@ -27,11 +27,12 @@ class PassportProcessing2 : AocProblemSolver() {
 
     //  this function is very specific to the input data
     private fun validatePassportData(passportData: String): Boolean {
+        //  split the passport data into individual stringified key values
+        //  each item should look like like hcl:#d125e3
         val stringifiedKeyValues = passportData.split(";")
 
-        //  convert stringifiedKeyValues to proper map
+        //  convert all stringifiedKeyValues for a passport into a proper map
         val ppdMap = stringifiedKeyValues.map {
-            //  each item looks like hcl:#d125e3
             val keyValueList = it.split(":")
             keyValueList[0] to keyValueList[1]
         }.toMap()
