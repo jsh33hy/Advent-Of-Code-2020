@@ -1,18 +1,18 @@
 package day2
 
-import base.AocProblem
-import utils.FileUtils
-import utils.JLog
+import base.AocProblemSolver
 
-class PasswordPhilosophy1 : AocProblem {
-    private val logger = JLog.getLogger(this.javaClass.simpleName)
-
+// O(n)
+class PasswordPhilosophy1 : AocProblemSolver() {
     //  See: https://regex101.com/r/rx6NPr/2
     private val regexMatcher = """(\d+)-(\d+) (.): (.*)${'$'}""".toRegex()
 
-    override fun run(): String {
-        val fileInput = FileUtils.readFile("problem2.txt")
-        val linesArray = fileInput.split("\n").map { it.trim() }
+    override fun getInputFileName(): String {
+        return "problem2Input.txt"
+    }
+
+    override fun solve(): String {
+        val linesArray = getInputAsLineList()
         return countValidPasswords(linesArray)
     }
 

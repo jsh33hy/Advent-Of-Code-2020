@@ -7,16 +7,19 @@ import day2.PasswordPhilosophy2
 import day3.TobogganTrajectory1
 import day3.TobogganTrajectory2
 
-class SolvedProblems {
+class AocProblemSolverFactory {
     companion object {
-        private val unsolvedProblem = object : AocProblem {
-            override fun run(): String {
+        private val unsolvedProblem = object : AocProblemSolver() {
+            override fun getInputFileName(): String {
+                return "NoFile.txt"
+            }
+            override fun solve(): String {
                 return "Unsolved Problem"
             }
         }
 
         //  could be a spare array
-        private val solvedProblems = mutableMapOf<Int, List<AocProblem>>()
+        private val solvedProblems = mutableMapOf<Int, List<AocProblemSolver>>()
 
         init {
             //  add day 1 problems
@@ -27,7 +30,7 @@ class SolvedProblems {
             solvedProblems[3] = listOf(TobogganTrajectory1(), TobogganTrajectory2())
         }
 
-        fun getProblem(day: Int, problemNumber: Int): AocProblem {
+        fun getSolver(day: Int, problemNumber: Int): AocProblemSolver {
             return if (solvedProblems.containsKey(day)) {
                 solvedProblems[day]?.elementAtOrNull(problemNumber - 1) ?: unsolvedProblem
             } else {

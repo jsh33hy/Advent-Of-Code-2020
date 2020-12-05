@@ -1,13 +1,12 @@
 package day3
 
-import utils.FileUtils
 import java.math.BigInteger
 
+// O(n)
 class TobogganTrajectory2 : TobogganTrajectory1() {
 
-    override fun run(): String {
-        val fileInput = FileUtils.readFile("problem3.txt")
-        val linesArray = fileInput.split("\n").map { it.trim() }
+    override fun solve(): String {
+        val linesArray = getInputAsLineList()
 
         //  list of Pair(xDrift, yDrift)
         val tobogganDriftAmounts = listOf(

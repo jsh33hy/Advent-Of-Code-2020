@@ -1,5 +1,5 @@
-import base.AocProblem
-import base.SolvedProblems
+import base.AocProblemSolver
+import base.AocProblemSolverFactory
 import day1.ReportRepair2
 import utils.JLog
 
@@ -14,11 +14,11 @@ fun main(args: Array<String>) {
     logger.log("Starting with arguments ${args.joinToString()}")
 
     //  get the problem to solve
-    val aocProblem: AocProblem =
+    val aocProblem: AocProblemSolver =
             // parse command line args
             if (args.size >= 2 && args[0].toIntOrNull() != null && args[1].toIntOrNull() != null) {
                 logger.log("Getting solution for day ${args[0]}, problem ${args[1]}")
-                SolvedProblems.getProblem(args[0].toInt(), args[1].toInt())
+                AocProblemSolverFactory.getSolver(args[0].toInt(), args[1].toInt())
             } else {
                 logger.log("Arguments not given or invalid. Solving for current problem.")
                 ReportRepair2()
@@ -26,6 +26,6 @@ fun main(args: Array<String>) {
 
     logger.log("Solving for ${aocProblem.javaClass.simpleName}")
 
-    val solution = aocProblem.run()
+    val solution = aocProblem.solve()
     logger.log(solution)
 }

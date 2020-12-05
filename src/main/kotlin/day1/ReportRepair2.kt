@@ -1,18 +1,17 @@
 package day1
 
-import base.AocProblem
-import utils.FileUtils
-import utils.JLog
-
+import base.AocProblemSolver
 
 //  O(n^2)
-class ReportRepair2 : AocProblem {
-    private val logger = JLog.getLogger(this.javaClass.simpleName)
+class ReportRepair2 : AocProblemSolver() {
 
-    override fun run(): String {
-        val fileInput = FileUtils.readFile("problem1.txt")
-        val linesArray = fileInput.split("\n").map { Integer.parseInt(it) }
-        return solveThreeSum(2020, linesArray).toString()
+    override fun getInputFileName(): String {
+        return "problem1Input.txt"
+    }
+
+    override fun solve(): String {
+        val integerArray = getInputAsLineList().map { Integer.parseInt(it) }
+        return solveThreeSum(2020, integerArray).toString()
     }
 
     private fun solveThreeSum(sumValue: Int, inputArr: List<Int>): Int {

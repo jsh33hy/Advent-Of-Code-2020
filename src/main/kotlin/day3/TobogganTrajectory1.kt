@@ -1,16 +1,15 @@
 package day3
 
-import base.AocProblem
-import utils.FileUtils
-import utils.JLog
+import base.AocProblemSolver
 
 // O(n)
-open class TobogganTrajectory1 : AocProblem {
-    protected val logger = JLog.getLogger(this.javaClass.simpleName)
+open class TobogganTrajectory1 : AocProblemSolver() {
+    override fun getInputFileName(): String {
+        return "problem3Input.txt"
+    }
 
-    override fun run(): String {
-        val fileInput = FileUtils.readFile("problem3.txt")
-        val linesArray = fileInput.split("\n").map { it.trim() }
+    override fun solve(): String {
+        val linesArray = getInputAsLineList()
         return countTreeHits(linesArray, 3, 1).toString()
     }
 

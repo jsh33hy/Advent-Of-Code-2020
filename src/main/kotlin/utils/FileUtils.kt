@@ -7,7 +7,7 @@ class FileUtils {
         private const val resourcesDir = "src/main/resources/"
 
         fun readFile(fileName: String): String {
-            return File(resourcesDir + fileName).readText()
+            return File(resourcesDir + fileName).readText().trim()
         }
     }
 }
