@@ -9,8 +9,12 @@ abstract class AocProblemSolver {
     abstract fun getInputFileName(): String
     abstract fun solve(): String
 
-    protected fun getInputAsLineList(): List<String> {
+    protected fun getFileInputAsLinesArray(): List<String> {
         val fileInput = FileUtils.readFile(getInputFileName())
         return fileInput.split("\n").map { it.trim() }
+    }
+
+    protected fun getRawFileInput(): String{
+        return FileUtils.readFile(getInputFileName())
     }
 }

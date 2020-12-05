@@ -6,7 +6,7 @@ import java.math.BigInteger
 class TobogganTrajectory2 : TobogganTrajectory1() {
 
     override fun solve(): String {
-        val linesArray = getInputAsLineList()
+        val linesArray = getFileInputAsLinesArray()
 
         //  list of Pair(xDrift, yDrift)
         val tobogganDriftAmounts = listOf(

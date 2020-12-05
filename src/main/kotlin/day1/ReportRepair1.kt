@@ -9,7 +9,7 @@ class ReportRepair1 : AocProblemSolver() {
     }
 
     override fun solve(): String {
-        val integerArray = getInputAsLineList().map { Integer.parseInt(it) }
+        val integerArray = getFileInputAsLinesArray().map { Integer.parseInt(it) }
         return solveTwoSum(2020, integerArray).toString()
     }
 

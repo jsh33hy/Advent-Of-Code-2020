@@ -6,6 +6,8 @@ import day2.PasswordPhilosophy1
 import day2.PasswordPhilosophy2
 import day3.TobogganTrajectory1
 import day3.TobogganTrajectory2
+import day4.PassportProcessing1
+import day4.PassportProcessing2
 
 class AocProblemSolverFactory {
     companion object {
@@ -28,6 +30,8 @@ class AocProblemSolverFactory {
             solvedProblems[2] = listOf(PasswordPhilosophy1(), PasswordPhilosophy2())
             //  add day 3 problems
             solvedProblems[3] = listOf(TobogganTrajectory1(), TobogganTrajectory2())
+            //  add day 4 problems
+            solvedProblems[4] = listOf(PassportProcessing1(), PassportProcessing2())
         }
 
         fun getSolver(day: Int, problemNumber: Int): AocProblemSolver {

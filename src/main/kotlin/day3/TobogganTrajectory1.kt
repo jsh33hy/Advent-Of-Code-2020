@@ -9,7 +9,7 @@ open class TobogganTrajectory1 : AocProblemSolver() {
     }
 
     override fun solve(): String {
-        val linesArray = getInputAsLineList()
+        val linesArray = getFileInputAsLinesArray()
         return countTreeHits(linesArray, 3, 1).toString()
     }
 

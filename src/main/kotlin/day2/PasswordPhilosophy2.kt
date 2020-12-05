@@ -12,7 +12,7 @@ class PasswordPhilosophy2 : AocProblemSolver() {
     }
 
     override fun solve(): String {
-        val linesArray = getInputAsLineList()
+        val linesArray = getFileInputAsLinesArray()
         return countValidPasswords(linesArray)
     }
 
