@@ -30,9 +30,8 @@ class CustomCustoms2 : AocProblemSolver() {
             val individualQuestionsArr = groupQuestions.split(";")
 
             //  loop through the distinct questions and look for ones that were answered by EVERYONE
-            // (f, fbqjswm, qmbjwfs, fmsbjwq, smjbqwf, hwsqmbfj) -> true -> 1
+            // fbqjswmh -> (f, (fbqjswm, qmbjwfs, fmsbjwq, smjbqwf, hwsqmbfj)) -> true -> 1
             distinctGroupQuestionsAnswered.map { currentQuestion ->
-                //  split the group questions into individuals
                 individualQuestionsArr.all { individualQuestions ->
                     individualQuestions.contains(currentQuestion)
                 }
