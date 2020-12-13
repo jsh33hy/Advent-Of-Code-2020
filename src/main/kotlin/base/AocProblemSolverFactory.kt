@@ -14,6 +14,8 @@ import day6.CustomCustoms1
 import day6.CustomCustoms2
 import day7.HandyHaversacks1
 import day7.HandyHaversacks2
+import day8.HandheldHalting1
+import day8.HandheldHalting2
 
 class AocProblemSolverFactory {
     companion object {
@@ -40,9 +42,12 @@ class AocProblemSolverFactory {
             solvedProblems[4] = listOf(PassportProcessing1(), PassportProcessing2())
             //  add day 5 problems
             solvedProblems[5] = listOf(BinaryBoarding1(), BinaryBoarding2())
-            //  add day 6 problmes
+            //  add day 6 problems
             solvedProblems[6] = listOf(CustomCustoms1(), CustomCustoms2())
+            //  add day 7 problems
             solvedProblems[7] = listOf(HandyHaversacks1(), HandyHaversacks2())
+            //  add day 8 problems
+            solvedProblems[8] = listOf(HandheldHalting1(), HandheldHalting2())
         }
 
         fun getSolver(day: Int, problemNumber: Int): AocProblemSolver {
