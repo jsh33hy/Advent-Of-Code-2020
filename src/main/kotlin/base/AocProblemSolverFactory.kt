@@ -16,6 +16,8 @@ import day7.HandyHaversacks1
 import day7.HandyHaversacks2
 import day8.HandheldHalting1
 import day8.HandheldHalting2
+import day9.EncodingError1
+import day9.EncodingError2
 
 class AocProblemSolverFactory {
     companion object {
@@ -48,6 +50,8 @@ class AocProblemSolverFactory {
             solvedProblems[7] = listOf(HandyHaversacks1(), HandyHaversacks2())
             //  add day 8 problems
             solvedProblems[8] = listOf(HandheldHalting1(), HandheldHalting2())
+            //  add day 9 problems
+            solvedProblems[9] = listOf(EncodingError1(), EncodingError2())
         }
 
         fun getSolver(day: Int, problemNumber: Int): AocProblemSolver {
