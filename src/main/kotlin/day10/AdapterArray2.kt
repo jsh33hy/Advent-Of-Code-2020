@@ -5,7 +5,6 @@ import java.math.BigInteger
 
 class AdapterArray2 : AocProblemSolver() {
     override fun getInputFileName() = "problem10Input.txt"
-    private val solvedMap = mutableMapOf<String,BigInteger>()
 
     override fun solve(): String {
         //  get sorted input and add our built in adapter
@@ -18,20 +17,27 @@ class AdapterArray2 : AocProblemSolver() {
         //  sort our adapters
         val sortedInput = input.sorted()
 
-        logger.log(sortedInput.toString())
+        logger.debug(sortedInput.toString())
 
-        return traverse(sortedInput, 3).toString()
+        return traverse(sortedInput, 3, mutableMapOf()).toString()
     }
 
-    private fun traverse(input: List<Int>, maxDifference: Int) : BigInteger{
+    //  this function written WITHOUT a lookup table becomes O(n!)
+    private fun traverse(
+        input: List<Int>,
+        maxDifference: Int,
+        solutionsLookupTable: MutableMap<String, BigInteger>
+    ) : BigInteger{
         when {
-            solvedMap.containsKey("${input.first()}::${input.last()}") -> {
-                return solvedMap["${input.first()}::${input.last()}"]!!
-            }
             input.size <= 1 -> {
                 return 1.toBigInteger()
             }
             else -> {
+                // break into sublists
+                //  ex: [..., 4, 5, 6, 7] would break into a list of 3 sublists
+                //      [..., 4] + [5 6 7]
+                //      [..., 4] + [6 7]
+                //      [..., 4] + [7]
                 val listOfLists = mutableListOf<List<Int>>()
                 val cur = input.first()
                 var idx = 1
@@ -39,11 +45,13 @@ class AdapterArray2 : AocProblemSolver() {
                     listOfLists.add(input.subList(idx, input.size))
                     idx++
                 }
-
                 return listOfLists.sumOf {
-                    val sum = traverse(it, maxDifference)
-                    solvedMap["${it.first()}::${it.last()}"] = sum
-                    sum
+                    val listKey = "${it.first()}::${it.last()}"
+                    if(!solutionsLookupTable.containsKey(listKey)){
+                        val sum = traverse(it, maxDifference, solutionsLookupTable)
+                        solutionsLookupTable[listKey] = sum
+                    }
+                    solutionsLookupTable[listKey]!!
                 }
             }
         }
