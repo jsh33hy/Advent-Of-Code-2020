@@ -2,6 +2,8 @@ package base
 
 import day1.ReportRepair1
 import day1.ReportRepair2
+import day10.AdapterArray1
+import day10.AdapterArray2
 import day2.PasswordPhilosophy1
 import day2.PasswordPhilosophy2
 import day3.TobogganTrajectory1
@@ -52,6 +54,8 @@ class AocProblemSolverFactory {
             solvedProblems[8] = listOf(HandheldHalting1(), HandheldHalting2())
             //  add day 9 problems
             solvedProblems[9] = listOf(EncodingError1(), EncodingError2())
+            //  add day 10 problems
+            solvedProblems[10] = listOf(AdapterArray1(), AdapterArray2())
         }
 
         fun getSolver(day: Int, problemNumber: Int): AocProblemSolver {
