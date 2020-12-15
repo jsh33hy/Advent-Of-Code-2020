@@ -12,8 +12,8 @@ class ConwaysSeatingSystem1 : AocProblemSolver() {
         do{
             //  see board as it changes
 //            Thread.sleep(500)
-//            game.printBoard()
 //            println("-----------------------------------------------------------------------------")
+//            game.printBoard()
         }while (game.cycle())
 
         return game.getBoardAsString().count { it == OCCUPIED }.toString()
