@@ -30,6 +30,10 @@ class ConwaysSeatingSystem1 : AocProblemSolver() {
 
         private fun allAdjacentSeatsAreEmpty(x: Int, y:Int): Boolean{
             var allEmpty = true
+            //  check adjacent (j,k) positions, which are y,x indexed--
+            //  (-1,-1) (-1, 0) (-1, 1)
+            //  (0,-1)   (0,0)  (0, 1)
+            //  (1,-1)  (1, 0)  (1, 1)
             for(j in -1..1){
                 for(k in -1..1){
                     val xpos = x + k
@@ -47,7 +51,10 @@ class ConwaysSeatingSystem1 : AocProblemSolver() {
 
         private fun fourOrMoreAdjacentSetsOccupied(x: Int, y:Int): Boolean{
             var numOccupied = 0
-
+            //  check adjacent (j,k) positions, which are y,x indexed--
+            //  (-1,-1) (-1, 0) (-1, 1)
+            //  (0,-1)   (0,0)  (0, 1)
+            //  (1,-1)  (1, 0)  (1, 1)
             for(j in -1..1){
                 for(k in -1..1){
                     val xpos = x + k

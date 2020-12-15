@@ -18,9 +18,9 @@ abstract class AbstractConwaysGame(input: List<String>) {
     //  - X - - - -
     //  - - - - - -
 
-    //  NOTE: using [y][x] instead of [x][y] because it is easier to print the board row by row
-    //      and not easy to do column by column
-    //  Also, the input is given as List<String> which is also [y][x]
+    //  NOTE: Using [y][x] instead of [x][y] for two reasons (Not recommended: this decision was the source of all my bugs)
+    //  1. The input is given as List<String> which is [y][x]
+    //  2. it is easy to print the board row by row and not easy to do column by column (in hindsight, this is compared to the stupid bugs)
 
     //  I don't know about kotlin, but in some languages, just using the raw ascci int value of the
     //  underlying char would speed comparisons up
