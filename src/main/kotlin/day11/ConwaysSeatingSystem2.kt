@@ -11,9 +11,9 @@ class ConwaysSeatingSystem2 : AocProblemSolver() {
 
         do{
             //  see board as it changes
-            Thread.sleep(500)
-            println("-----------------------------------------------------------------------------")
-            game.printBoard()
+//            Thread.sleep(500)
+//            println("-----------------------------------------------------------------------------")
+//            game.printBoard()
         }while (game.cycle())
 
         return game.getBoardAsString().count { it == AbstractConwaysGame.OCCUPIED }.toString()
@@ -71,6 +71,8 @@ class ConwaysSeatingSystem2 : AocProblemSolver() {
             //         ?
             //           ?
             var localX = x; var localY = y
+            //  default the next seatType to FLOOR, only change/break loop if
+            //  the next seatType is INVALID, OCCUPIED, or EMPTY
             var nextSeatType = FLOOR
             while(nextSeatType == FLOOR){
                 val xpos = localX + xinc
